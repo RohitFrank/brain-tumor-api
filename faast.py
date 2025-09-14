@@ -1,3 +1,8 @@
+
+import os
+MODEL_PATH = os.getenv("MODEL_PATH", "D:/hackothan/best_vgg19_model.pth")
+API_ENV = os.getenv("ENVIRONMENT", "development")
+
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
@@ -171,4 +176,5 @@ if __name__ == "__main__":
         host="0.0.0.0",
         port=8000,
         reload=True  # Set to False in production
+
     )
